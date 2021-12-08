@@ -1,0 +1,33 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cabin-Bold', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*background-image: url('./assets/bg.png');/**/
+}
+
+@font-face {
+  font-family: 'Cabin-Bold';
+  src: local('Cabin-Bold'), url('./fonts/Cabin-Bold.ttf') format('truetype');
+}
+
+.layout {
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --main-panel-color: rgba(27, 43, 73, 0.8);
+    --sub-panel-color: rgba(27, 43, 73, 0.9);
+    --white-full: #fafafa;
+    --white-half: hsla(0,0%,98%,0.5);
+    --color-new-t: #B35E30;
+    --color-new-ct: #188BB6;
+}

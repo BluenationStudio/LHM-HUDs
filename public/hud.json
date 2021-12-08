@@ -1,0 +1,12 @@
+{
+    "name":"UniCup CLASSIC HUD",
+    "version":"3.1.0",
+    "author":"jcop",
+    "legacy": false,
+    "radar": true,
+    "killfeed": true,
+    "boltobserv":{
+        "css":true,
+        "maps":true
+    }
+}
