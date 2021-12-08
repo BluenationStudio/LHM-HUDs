@@ -7,14 +7,14 @@
     transition: opacity 0.75s;
     &.CT {
         .player .hp_bar {
-            background-color: var(--color-new-ct);
+            background: var(--color-new-ct);
         }
     }
     &.T {
         .player .hp_bar {
-            background-color: var(--color-new-t);
+            background: var(--color-new-t);
         }
-    }
+	}
     &.hide {
         opacity: 0;
     }
@@ -35,6 +35,11 @@
                 }
                 .username .roundkills-container {
                     right: 115px;
+                }
+                .health {
+                    .skull {
+                        right: 236px;
+                    }
                 }
                 .secondary_weapon {
                     padding-right: 10px;
@@ -67,6 +72,11 @@
                         flex-direction: row-reverse;
                         .roundkills-container {
                             left: 115px;
+                        }
+                    }
+                    .health {
+                        .skull {
+                            left: 236px;
                         }
                     }
                     .secondary_weapon {
@@ -102,14 +112,12 @@
             }
         }
         &.dead {
-            opacity: 0.7;
+            opacity: 0.55;
             .player_side_bar {
                 background-color: var(--main-panel-color) !important;
             }
             .player_data {
-                .avatar {
-                    filter: grayscale(100%);
-                }
+                width: 45%;
                 .dead-stats {
                     display: flex;
                 }
@@ -120,6 +128,11 @@
                     .health {
                         color: #b2b2b2;
                         overflow: hidden;
+                        .skull {
+                            position: absolute;
+                            top: 6px;
+                            transform: scale(0.75);
+                        }
                     }
                     .username {
                         color: #b2b2b2;
@@ -133,9 +146,6 @@
                     }
                 }
             }
-        }
-        &:last-child .player_data {
-            border-radius: 0 0 20px 20px;
         }
         .player_side_bar {
             width: 10px;
@@ -171,7 +181,7 @@
         }
         .player_data {
             background-color: var(--sub-panel-color);
-            width: 415px;
+            width: 365px;
             display: flex;
             flex-direction: row;
             position: relative;
@@ -182,7 +192,8 @@
                 flex: 1;
                 min-width: 0;
                 .hp_bar {
-                    height: 2px;
+                    height:50%;
+                    position:absolute;
                     &.low {
                         background-color: red;
                     }
@@ -204,7 +215,7 @@
                         z-index: 0;
                     }
                     .hp_background_2 {
-                        background-color: var(--color-bomb);
+                        background-color: white;
                         transition: width 0.75s 1.5s;
                     }
                     .armor_and_utility {
@@ -261,7 +272,7 @@
                     }
                     .money {
                         width: 60px;
-                        color: var(--color-moneys);
+                        color: #B5ACAB;
                         font-weight: 600;
                         display: flex;
                         align-items: center;
@@ -301,19 +312,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
-                overflow: hidden;
-                position: relative;
-                .videofeed {
-                    width:70px;
-                    height:70px;
-                    position: absolute;
-                    display: flex;
-                    justify-content: center;
-                    video {
-                        height: 70px;
-                        position: absolute;
-                    }
-                }
                 img {
                     border-radius:50%;
                 }
@@ -325,27 +323,24 @@
 .players_alive {
     display: flex;
     flex-direction: column;
-    width: 180px;
+    width: 250px;
     background-color: rgba(0,0,0,0.5);
     position: fixed;
-    right: 10px;
-    top: 10px;
+    right: 25px;
+    top: 15px;
     opacity: 1;
     transition: opacity 1s;
     .counter_container {
         display: flex;
-        height: 45px;
+        height: 60px;
         > div {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size:30px;
+            font-size:40px;
             color: white;
             background-color: rgba(0,0,0,0.5);
-        }
-        .team_counter {
-            background-color: rgba(0,0,0,0.75);
         }
         .CT {
             color: var(--color-new-ct);

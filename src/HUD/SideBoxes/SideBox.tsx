@@ -7,8 +7,8 @@ export default class SideBox extends React.Component<{ side: 'left' | 'right', h
 	constructor(props: any) {
 		super(props);
 		this.state = {
-            title:'Title',
-            subtitle:'Content',
+            title:'',
+            subtitle:'',
 		}
 	}
 
