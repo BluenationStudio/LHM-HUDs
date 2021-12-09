@@ -162,7 +162,7 @@ html, body, .map-container {
     font-weight: 600;
     border-radius: 50%;
     -webkit-font-smoothing: subpixel-antialiased;
-    font-size: 27px;
+    font-size: 45px;
 }
 .map .bomb .background {
     background-image: url('./grenades/bomb.png');
@@ -192,11 +192,4 @@ html, body, .map-container {
 
 .map .hidden {
     opacity: 0 !important;
-}
-.avatar{
-    z-index: 10;
-}
-
-.avatar img{
-    border-radius: 50%;
 }
