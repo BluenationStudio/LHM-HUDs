@@ -1,18 +1,16 @@
 .observed {
     position: fixed;
-    width: 480px;
-    bottom: 120px;
-    margin-left: -240px;
+    width: 620px;
+    bottom: 80px;
+    margin-left: -310px;
     left: 50%;
-    height: 76px;
+    height: 86px;
     display: flex;
     flex-direction: column;
     color: white;
     background-color: rgba(0,0,0,0.6);
 
     .main_row, .stats_row {
-        width: 340px;
-        left: 140px;
         flex: 1;
         display: flex;
         align-items: center;
@@ -20,38 +18,10 @@
         position: relative;
         height: 43px;
     }
-    .avatar_row {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        position: relative;
-        bottom: 10px;
-        height: 43px;
-        .avatar {
-            width: 140px;
-            height: 140px;
-            img {
-                -webkit-mask-image: linear-gradient(to top, transparent 5%, black 65%);
-                mask-image: linear-gradient(to top, transparent 5%, black 65%);
-                border-radius: 0%;
-            }
-        }
-        .username_container {
-            display: flex;
-            position: relative;
-            top: 55px;
-            right: 110px;
-            height: 100%;
-            align-items: flex-start;
-            text-align: center;
-            .username {
-                font-size: 16pt;
-            }
-        }
-    }
+
     .stats_row {
         height: 28px;
-        top: -35px;
+
         .stats_cell {
             height: 100%;
             width: 56px;
@@ -108,49 +78,11 @@
                 }
             }
         }
-        .statistics {
-            height: 100%;
-            flex: 1;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-end;
-            .stat {
-                display: flex;
-                font-weight: 600;
-                font-size: 18px;
-                margin-right: 24px;
-            }
-        }
-    }
-
-    .main_row {
-        bottom: 43px;
-        font-weight: 600;
-        .logo {
-            display: none;
-        }
-        .grenade_container {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            width: 140px;
-            justify-content: center;
-        
-        }
-        .weapon.grenade {
-            height: 28px;
-            /*filter: invert(1);*/
-
-            &:last-child {
-                margin-right: 5px;
-            }
-        }
         .health_armor_container {
             display: flex;
             height: 100%;
             width: 140px;
-            justify-content: right;
+            justify-content: center;
             .text {
                 width: 30px;
                 display: flex;
@@ -173,6 +105,65 @@
                 }
             }
         }
+        .statistics {
+            height: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            .stat {
+                display: flex;
+                font-weight: 600;
+                font-size: 18px;
+                margin-right: 24px;
+            }
+        }
+    }
+
+    .main_row {
+        font-weight: 600;
+        -webkit-text-stroke-width: 0.1px;
+        -webkit-text-stroke-color: black;
+        .logo {
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .grenade_container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            width: 140px;
+            justify-content: center;
+        
+        }
+        .username_container {
+            height: 100%;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            -webkit-text-stroke-width: 0.1px;
+            -webkit-text-stroke-color: black;
+            .real_name {
+                font-size: 11.2px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+        .weapon.grenade {
+            height: 28px;
+            /*filter: invert(1);*/
+
+            &:last-child {
+                margin-right: 5px;
+            }
+        }
+        
     }
     .sidebar {
         width: 10px;
@@ -186,19 +177,81 @@
         }
     }
     .flag {
-        display: none;
+        height: 43px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            height: 43px;
+        }
+    }
+    .avatar {
+        align-self: flex-end;
+        display: flex;
+        position: relative;
+        width: 140px;
+        height: 140px;
+        img {
+            border-radius:0%;
+        }
     }
     
     &.T {
+        border-bottom: 0px solid var(--color-new-t); ///old 6px
         .main_row {
+            background-color: var(--color-t);
+            text-shadow: var(--color-dark-t) 1px 1px,
+			var(--color-dark-t) 2px 2px,
+			var(--color-dark-t) 3px 3px,
+			var(--color-dark-t) 4px 4px,
+			var(--color-dark-t) 5px 5px,
+			var(--color-dark-t) 6px 6px,
+			var(--color-dark-t) 7px 7px,
+        }
+        .stats_row .ammo .ammo_counter .ammo_reserve {
+            color: var(--color-new-t)
+        }
+        .sidebar {
             background-color: var(--color-new-t)
         }
-
+        .stats_row .statistics .stat .label {
+            color: var(--color-new-t);
+            margin-right: 2px;
+        }
+        .stats_row .health_armor_container .icon, .stats_row .ammo .ammo_icon_container {
+            svg {
+                fill: var(--color-new-t);
+            }
+        }
     }
     &.CT {
+        border-bottom: 0px solid var(--color-new-ct); /// old 6px
         .main_row {
+            background-color: var(--color-ct);
+            text-shadow: var(--color-dark-ct) 1px 1px,
+			var(--color-dark-ct) 2px 2px,
+			var(--color-dark-ct) 3px 3px,
+			var(--color-dark-ct) 4px 4px,
+			var(--color-dark-ct) 5px 5px,
+			var(--color-dark-ct) 6px 6px,
+			var(--color-dark-ct) 7px 7px,
+        }
+        .stats_row .ammo .ammo_counter .ammo_reserve {
+            color: var(--color-new-ct)
+        }
+        .sidebar {
             background-color: var(--color-new-ct)
         }
+        .stats_row .statistics .stat .label {
+            color: var(--color-new-ct);
+            margin-right: 2px;
+        }
+        .stats_row .health_armor_container .icon, .stats_row .ammo .ammo_icon_container {
+            svg {
+                fill: var(--color-new-ct);
+            }
+        }
+        
     }
 }
 

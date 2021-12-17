@@ -1,27 +1,51 @@
 import React from "react";
 import { Player, WeaponRaw } from "csgogsi-socket";
 import Weapon from "./../Weapon/Weapon";
+import Avatar from "./Avatar";
 import Armor from "./../Indicators/Armor";
 import Bomb from "./../Indicators/Bomb";
 import Defuse from "./../Indicators/Defuse";
-import Avatar from "./Avatar";
+import { GSI } from "../../App";
 
 interface IProps {
+
   player: Player,
   isObserved: boolean,
   isFreezetime: boolean,
 }
-export default class PlayerBox extends React.Component<IProps> {
+
+interface IState {
+  startRoundMoney: number;
+}
+
+export default class PlayerBox extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {
+      startRoundMoney: 800
+    }
+  }
+  componentDidMount() {
+    GSI.on("freezetimeStart", () => {
+      this.setState({ startRoundMoney: this.props.player.state.money });
+    });
+  }
+  
   render() {
-    const { player } = this.props;
+    const { player, isFreezetime } = this.props;
     const weapons: WeaponRaw[] = Object.values(player.weapons).map(weapon => ({ ...weapon, name: weapon.name.replace("weapon_", "") }));
     const primary = weapons.filter(weapon => !['C4', 'Pistol', 'Knife', 'Grenade', undefined].includes(weapon.type))[0] || null;
     const secondary = weapons.filter(weapon => weapon.type === "Pistol")[0] || null;
     const grenades = weapons.filter(weapon => weapon.type === "Grenade");
     const isLeft = player.team.orientation === "left";
+    var moneySpent = Math.abs(this.state.startRoundMoney - player.state.money);
+    
     return (
       <div className={`player ${player.state.health === 0 ? "dead" : ""} ${this.props.isObserved ? 'active' : ''}`}>
         <div className="player_data">
+          <div className="playerid">
+          </div>
+
           <div className="dead-stats">
             <div className="labels">
               <div className="stat-label">K</div>
@@ -37,7 +61,7 @@ export default class PlayerBox extends React.Component<IProps> {
           <div className="player_stats">
             <div className="row">
               <div className="health">
-                {player.state.health > 0 ? player.state.health : <div className="skull"><Avatar steamid={player.steamid} height={57} width={57} showSkull={true}/></div>}
+                {player.state.health}
               </div>
               <div className="username">
                 <div>{isLeft ? <span>{player.observer_slot}</span> : null} {player.name} {!isLeft ? <span>{player.observer_slot}</span> : null}</div>
@@ -65,6 +89,22 @@ export default class PlayerBox extends React.Component<IProps> {
             </div>
             <div className="active_border"></div>
           </div>
+        </div>
+        <div className={`freezetime_KAD ${!isFreezetime ? 'hide' : ''}`}>
+          <div className="labels">
+            <div className="stat-label">K</div>
+            <div className="stat-label">A</div>
+            <div className="stat-label">D</div>
+          </div>
+          <div className="values">
+            <div className="stat-value">{player.stats.kills}</div>
+            <div className="stat-value">{player.stats.assists}</div>
+            <div className="stat-value">{player.stats.deaths}</div>
+          </div>
+        </div>
+        <div className={`spending ${this.props.isFreezetime && this.props.isFreezetime === true ? 'show' : 'hide'}`}>
+          <div className="label">${player.state.equip_value}</div>
+          <div className="value">-${moneySpent}</div>
         </div>
       </div>
     );

@@ -6,6 +6,7 @@ import Observed from "./../Players/Observed";
 import { CSGO, Team } from "csgogsi-socket";
 import { Match } from "../../api/interfaces";
 import RadarMaps from "./../Radar/RadarMaps";
+import Trivia from "../Trivia/Trivia";
 import SideBox from '../SideBoxes/SideBox';
 import { GSI, actions } from "./../../App";
 import MoneyBox from '../SideBoxes/Money';
@@ -77,8 +78,8 @@ export default class Layout extends React.Component<Props, State> {
 
     return (
       <div className="layout">
-        <div className={`players_alive ${!isFreezetime ? "" : "hide"}`}>
-          <div className="title_container">Hráči naživu</div>
+        <div className={`players_alive`}>
+          <div className="title_container">Players alive</div>
           <div className="counter_container">
             <div className={`team_counter ${left.side}`}>{leftPlayers.filter(player => player.state.health > 0).length}</div>
             <div className={`vs_counter`}>VS</div>
@@ -100,8 +101,11 @@ export default class Layout extends React.Component<Props, State> {
         <TeamBox team={left} players={leftPlayers} side="left" current={game.player} isFreezetime={isFreezetime} />
         <TeamBox team={right} players={rightPlayers} side="right" current={game.player} isFreezetime={isFreezetime} />
 
+        <Trivia />
+
         <MapSeries teams={[left, right]} match={match} isFreezetime={isFreezetime} map={game.map} />
         <div className={"boxes left"}>
+          <SideBox side="left" hide={forceHide} />
           <UtilityLevel side={left.side} players={game.players} show={isFreezetime && !forceHide} />
           <MoneyBox
             team={left.side}

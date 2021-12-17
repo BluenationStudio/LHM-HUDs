@@ -1,8 +1,10 @@
 import React from "react";
+
 import { GSI } from "./../../App";
 import BombTimer from "./Countdown";
-import "./BombTimer.css"
-export default class Bomb extends React.Component<any, { height: number; show: boolean}> {
+import { C4 } from "./../../assets/Icons";
+
+export default class Bomb extends React.Component<any, { height: number; show: boolean }> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -39,6 +41,7 @@ export default class Bomb extends React.Component<any, { height: number; show: b
       <div id={`bomb_container`}>
         <div className={`bomb_timer ${this.state.show ? "show" : "hide"}`} style={{ height: `${this.state.height}%` }}></div>
         <div className={`bomb_icon ${this.state.show ? "show" : "hide"}`}>
+          <C4 fill="white" />
         </div>
       </div>
     );
