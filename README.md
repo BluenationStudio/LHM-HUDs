@@ -1,4 +1,5 @@
 <<<<<<< refs/remotes/upstream/master
+<<<<<<< refs/remotes/upstream/master
 
 <p align="center">
 	<p align="center" style="font-weight:600; letter-spacing:1pt; font-size:20pt;">LEXOGRINE HUD</p>
@@ -146,4 +147,9 @@ Radar is custom React-based component, made by Hubert Walczak, and is easily edi
 # LHM-HUDs
 Prestige Build Status
 [![Prestige](https://github.com/kubo6472/LHM-HUDs/actions/workflows/workflow.yml/badge.svg?branch=prestige)](https://github.com/kubo6472/LHM-HUDs/actions/workflows/workflow.yml)
+>>>>>>> Create README.md
+=======
+# LHM-HUDs
+Classic Build Status
+[![Classic](https://github.com/kubo6472/LHM-HUDs/actions/workflows/workflow.yml/badge.svg?branch=classic)](https://github.com/kubo6472/LHM-HUDs/actions/workflows/workflow.yml)
 >>>>>>> Create README.md
