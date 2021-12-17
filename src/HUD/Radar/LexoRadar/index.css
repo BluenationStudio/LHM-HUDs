@@ -193,10 +193,3 @@ html, body, .map-container {
 .map .hidden {
     opacity: 0 !important;
 }
-.avatar{
-    z-index: 10;
-}
-
-.avatar img{
-    border-radius: 50%;
-}

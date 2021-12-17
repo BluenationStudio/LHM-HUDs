@@ -18,6 +18,7 @@ export default class PlayerBox extends React.Component<IProps> {
     const primary = weapons.filter(weapon => !['C4', 'Pistol', 'Knife', 'Grenade', undefined].includes(weapon.type))[0] || null;
     const secondary = weapons.filter(weapon => weapon.type === "Pistol")[0] || null;
     const grenades = weapons.filter(weapon => weapon.type === "Grenade");
+    const isLeft = player.team.orientation === "left";
     return (
       <div className={`player ${player.state.health === 0 ? "dead" : ""} ${this.props.isObserved ? 'active' : ''}`}>
         <div className="player_data">
@@ -39,7 +40,7 @@ export default class PlayerBox extends React.Component<IProps> {
                 {player.state.health > 0 ? player.state.health : <div className="skull"><Avatar steamid={player.steamid} height={57} width={57} showSkull={true}/></div>}
               </div>
               <div className="username">
-                <div>{player.name}</div>
+                <div>{isLeft ? <span>{player.observer_slot}</span> : null} {player.name} {!isLeft ? <span>{player.observer_slot}</span> : null}</div>
                 {primary || secondary ? <Weapon weapon={primary ? primary.name : secondary.name} active={primary ? primary.state === "active" : secondary.state === "active"} /> : ""}
                 {player.state.round_kills ? <div className="roundkills-container">{player.state.round_kills}</div> : null}
               </div>

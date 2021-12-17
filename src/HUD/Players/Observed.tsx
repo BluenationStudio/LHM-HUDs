@@ -44,11 +44,11 @@ export default class Observed extends React.Component<{ player: Player | null, v
 						<div className="health-icon icon">
 							<HealthFull />
 						</div>
-						<div className="health text">&nbsp;&nbsp;{player.state.health}</div>&nbsp;&nbsp;
-						<div className="armor-icon icon">&nbsp;&nbsp;
+						<div className="health text">{player.state.health}</div>
+						<div className="armor-icon icon">
 							{player.state.helmet ? <ArmorHelmet /> : <ArmorFull />}
 						</div>
-						<div className="health text">&nbsp;&nbsp;&nbsp;&nbsp;{player.state.armor}</div>
+						<div className="health text">{player.state.armor}</div>
 					</div>
 					<div className="flag">{countryName ? <img src={`${apiUrl}files/img/flags/${countryName.replace(/ /g, "-")}.png`} alt={countryName} /> : ''}</div>
 					<div className="grenade_container">
@@ -64,9 +64,9 @@ export default class Observed extends React.Component<{ player: Player | null, v
 						<div className="username">{player.name}</div>
 					</div>
 					<div className="statistics">
-						K&nbsp;&nbsp;<Statistic label={"\xa0"} value={stats.kills} />
-						A&nbsp;&nbsp;<Statistic label={"\xa0"} value={stats.assists} />
-						D&nbsp;&nbsp;<Statistic label={"\xa0"} value={stats.deaths} />
+						<Statistic label={"K\xa0"} value={stats.kills} />
+						<Statistic label={"A\xa0"} value={stats.assists} />
+						<Statistic label={"D\xa0"} value={stats.deaths} />
 					</div>
 					<div className="ammo">
 						<div className="ammo_counter">

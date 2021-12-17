@@ -1,8 +1,8 @@
 .observed {
     position: fixed;
-    width: 340px;
+    width: 480px;
     bottom: 120px;
-    margin-left: -100px;
+    margin-left: -240px;
     left: 50%;
     height: 86px;
     display: flex;
@@ -46,16 +46,13 @@
             }
         }
         .username_container {
-            width: 140px;
-            height: 140px;
+            height: 100%;
+            flex: 1;
             display: flex;
-            flex-shrink: 0;
             position: absolute;
-            left: -140px;
-            top: -95px;
-            z-index: 25;
+            left: 30px;
             justify-content: center;
-            align-items: flex-end;
+            flex-direction: column;
             .username {
                 font-size: 16pt;
             }
@@ -115,8 +112,6 @@
             display: none;
         }
         .grenade_container {
-            position: relative;
-            right: 10px;
             height: 100%;
             display: flex;
             align-items: center;
@@ -133,8 +128,6 @@
             }
         }
         .health_armor_container {
-            position: relative;
-            right: 110px;
             display: flex;
             height: 100%;
             width: 140px;
@@ -179,16 +172,12 @@
     .avatar {
         display: flex;
         position: relative;
-        left: -140px;
         width: 140px;
         height: 140px;
         img {
-            -webkit-mask-image: linear-gradient(to top, transparent 1%, black 30%);
-            mask-image: linear-gradient(to top, transparent 1%, black 30%);
+            -webkit-mask-image: linear-gradient(to top, transparent 5%, black 65%);
+            mask-image: linear-gradient(to top, transparent 5%, black 65%);
         }
-    }
-    .avatar img{
-        border-radius: 0%;
     }
     
     &.T {

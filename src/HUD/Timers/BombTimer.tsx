@@ -1,6 +1,7 @@
 import React from "react";
 import { GSI } from "./../../App";
 import BombTimer from "./Countdown";
+import "./BombTimer.css"
 export default class Bomb extends React.Component<any, { height: number; show: boolean}> {
   constructor(props: any) {
     super(props);
@@ -36,7 +37,7 @@ export default class Bomb extends React.Component<any, { height: number; show: b
   render() {
     return (
       <div id={`bomb_container`}>
-        <div className={`bomb_timer ${this.state.show ? "show" : "hide"}`} style={{ height: `${this.state.height}%` }}></div>
+        <div className={`bomb_timer ${this.state.show ? "show" : "hide"}`}></div>
       </div>
     );
   }

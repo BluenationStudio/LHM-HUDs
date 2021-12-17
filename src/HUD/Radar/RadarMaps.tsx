@@ -57,7 +57,7 @@ class MapEntry extends React.PureComponent<{veto: Veto, map: Map, team: Team | n
         const { veto, map, team } = this.props;
         return <div className="veto_entry">
             <div className="team_logo">{team ? <TeamLogo team={team} />: null}</div>
-            <div className={`map_name ${map.name.includes(veto.mapName) ? 'active':''}`}>{veto.mapName.replace("de_", "")}</div>
+            <div className={`map_name ${map.name.includes(veto.mapName) ? 'active':''}`}>{veto.mapName}</div>
         </div>
     }
 }

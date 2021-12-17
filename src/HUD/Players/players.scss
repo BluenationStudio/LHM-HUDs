@@ -112,7 +112,7 @@
             }
         }
         &.dead {
-            opacity: 0.55;
+            opacity: 0.7;
             .player_side_bar {
                 background-color: var(--main-panel-color) !important;
             }
@@ -323,24 +323,27 @@
 .players_alive {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 180px;
     background-color: rgba(0,0,0,0.5);
     position: fixed;
-    right: 25px;
-    top: 15px;
+    right: 10px;
+    top: 10px;
     opacity: 1;
     transition: opacity 1s;
     .counter_container {
         display: flex;
-        height: 60px;
+        height: 45px;
         > div {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size:40px;
+            font-size:30px;
             color: white;
             background-color: rgba(0,0,0,0.5);
+        }
+        .team_counter {
+            background-color: rgba(0,0,0,0.75);
         }
         .CT {
             color: var(--color-new-ct);
