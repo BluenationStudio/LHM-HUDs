@@ -1,16 +1,18 @@
 .observed {
     position: fixed;
-    width: 340px;
+    width: 480px;
     bottom: 120px;
-    margin-left: -100px;
+    margin-left: -240px;
     left: 50%;
-    height: 86px;
+    height: 76px;
     display: flex;
     flex-direction: column;
     color: white;
     background-color: rgba(0,0,0,0.6);
 
     .main_row, .stats_row {
+        width: 340px;
+        left: 140px;
         flex: 1;
         display: flex;
         align-items: center;
@@ -18,10 +20,38 @@
         position: relative;
         height: 43px;
     }
-
+    .avatar_row {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        position: relative;
+        bottom: 10px;
+        height: 43px;
+        .avatar {
+            width: 140px;
+            height: 140px;
+            img {
+                -webkit-mask-image: linear-gradient(to top, transparent 5%, black 65%);
+                mask-image: linear-gradient(to top, transparent 5%, black 65%);
+                border-radius: 0%;
+            }
+        }
+        .username_container {
+            display: flex;
+            position: relative;
+            top: 55px;
+            right: 110px;
+            height: 100%;
+            align-items: flex-start;
+            text-align: center;
+            .username {
+                font-size: 16pt;
+            }
+        }
+    }
     .stats_row {
         height: 28px;
-
+        top: -35px;
         .stats_cell {
             height: 100%;
             width: 56px;
@@ -43,21 +73,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-            }
-        }
-        .username_container {
-            width: 140px;
-            height: 140px;
-            display: flex;
-            flex-shrink: 0;
-            position: absolute;
-            left: -140px;
-            top: -95px;
-            z-index: 25;
-            justify-content: center;
-            align-items: flex-end;
-            .username {
-                font-size: 16pt;
             }
         }
         .ammo {
@@ -110,13 +125,12 @@
     }
 
     .main_row {
+        bottom: 43px;
         font-weight: 600;
         .logo {
             display: none;
         }
         .grenade_container {
-            position: relative;
-            right: 10px;
             height: 100%;
             display: flex;
             align-items: center;
@@ -133,8 +147,6 @@
             }
         }
         .health_armor_container {
-            position: relative;
-            right: 110px;
             display: flex;
             height: 100%;
             width: 140px;
@@ -175,20 +187,6 @@
     }
     .flag {
         display: none;
-    }
-    .avatar {
-        display: flex;
-        position: relative;
-        left: -140px;
-        width: 140px;
-        height: 140px;
-        img {
-            -webkit-mask-image: linear-gradient(to top, transparent 1%, black 30%);
-            mask-image: linear-gradient(to top, transparent 1%, black 30%);
-        }
-    }
-    .avatar img{
-        border-radius: 0%;
     }
     
     &.T {

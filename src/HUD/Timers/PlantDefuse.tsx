@@ -4,6 +4,7 @@ import { Player } from "csgogsi";
 
 interface IProps {
   timer: Timer | null;
+  side: "left" | "right";
 }
 export default class Bomb extends React.Component<IProps> {
   getCaption = (type: "defusing" | "planting", player: Player | null) => {
@@ -20,7 +21,7 @@ export default class Bomb extends React.Component<IProps> {
   render() {
     const { timer } = this.props;
     return (
-      <div className={`defuse_plant_container ${timer && timer.type} ${timer && timer.active ? 'show' :'hide'}`}>
+      <div className={`defuse_plant_container ${timer?.type} ${timer && timer.active ? 'show' :'hide'}`}>
         {
           timer ?
           <div className={`defuse_plant_caption`}>

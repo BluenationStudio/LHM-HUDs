@@ -21,11 +21,11 @@ class VetoEntry extends React.Component<IVetoProps> {
     render(){
         const { veto, teams, active } = this.props;
         return <div className={`veto_container ${active ? 'active' : ''} ${veto.mapName}`}>
-            <div className="veto_map_name">
-                {veto.mapName.replace("de_","")}
-            </div>
             <div className="veto_picker">
                 <TeamLogo team={teams.filter(team => team.id === veto.teamId)[0]} />
+            </div>
+            <div className="veto_map_name">
+                {veto.mapName.replace("de_","")}
             </div>
             <div className="veto_winner">
                 <TeamLogo team={teams.filter(team => team.id === veto.winner)[0]} />
@@ -48,7 +48,7 @@ export default class MapSeries extends React.Component<IProps> {
         return (
             <div className={`map_series_container ${isFreezetime ? 'show': 'hide'}`}>
                 <div className="title_bar">
-                    <div className="picked">Picked</div>
+                    <div className="picked">Pick</div>
                     <div className="winner">Winner</div>
                     <div className="score">Score</div>
                 </div>

@@ -120,7 +120,7 @@ export default class TeamBox extends React.Component<IProps, IState> {
       if(!player || !player.team) return;
       this.setState(state => {
         state.defusing.active = true;
-        state.defusing.countdown = !Boolean(player.state.defusekit) ? 10 : 5;
+        state.defusing.countdown = !Boolean(player.state.defusekit) ? 10 : 5; //stadeto nadviazať dva gify na defusing
         state.defusing.side = player.team.orientation;
         state.defusing.player = player;
         return state;
@@ -188,16 +188,16 @@ export default class TeamBox extends React.Component<IProps, IState> {
     return (
       <>
         <div id={`matchbar`}>
-          <TeamScore team={left} orientation={"left"} timer={leftTimer} showWin={winState.show && winState.side === "left"} />
           <div className={`score left ${left.side}`}>{left.score}</div>
+          <TeamScore team={left} orientation={"left"} timer={leftTimer} showWin={winState.show && winState.side === "left"} />
           <div id="timer" className={bo === 0 ? 'no-bo' : ''}>
-            <div id="round_now" className={isPlanted ? "hide":""}>{this.getRoundLabel()}</div>
             <div id={`round_timer_text`} className={isPlanted ? "hide":""}>{time}</div>
+            <div id="round_now" className={isPlanted ? "hide":""}>{this.getRoundLabel()}</div>
             <div id="site" className={isPlanted ? "":"hide"}>{bombsite === undefined ? "C4 PLANTED" : bombsite}</div>
             <Bomb/>
             </div>
-          <div className={`score right ${right.side}`}>{right.score}</div>
           <TeamScore team={right} orientation={"right"} timer={rightTimer} showWin={winState.show && winState.side === "right"} />
+          <div className={`score right ${right.side}`}>{right.score}</div>
         </div>
       </>
     );

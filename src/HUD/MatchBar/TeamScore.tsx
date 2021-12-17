@@ -19,7 +19,7 @@ export default class TeamScore extends React.Component<IProps> {
       <>
         <div className={`team ${orientation} ${team.side}`}>
           <TeamLogo team={team} />
-          <div className={`team-name ${orientation}`}>{team.name}</div>
+          <div className="team-name">{team.name}</div>
         </div>
         <PlantDefuse timer={timer} side={orientation} />
         <WinIndicator team={team} show={showWin}/>

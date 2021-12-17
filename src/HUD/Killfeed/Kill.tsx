@@ -31,7 +31,7 @@ export default class Kill extends React.Component<{ event: ExtendedKillEvent | B
 		return (
 			<div className={`single_kill`}>
 				{event.attackerblind ? <img src={flash_kill} className="flash_kill" alt={'[FLASHED]'} /> : ''}
-				{event.killer ? <div className={`killer_name ${event.killer.team.side}`}>{event.killer.name}</div> : null}
+				<div className={`killer_name ${event.killer.team.side}`}>{event.killer.name}</div>
 				{event.assister ?
 					<React.Fragment>
 						<div className="plus">+</div>

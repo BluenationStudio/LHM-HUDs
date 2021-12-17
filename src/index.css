@@ -1,3 +1,5 @@
+@import "fonts/montserrat.css";
+@import "fonts/stratum2.css";
 html,
 body,
 #root {
@@ -7,15 +9,25 @@ body,
 
 body {
   margin: 0;
-  font-family: 'Cabin-Bold', sans-serif;
+  font-family: 'Stratum2', 'Montserrat', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /*background-image: url('./assets/bg.png');/**/
 }
 
 @font-face {
-  font-family: 'Cabin-Bold';
-  src: local('Cabin-Bold'), url('./fonts/Cabin-Bold.ttf') format('truetype');
+  font-family: 'Louis George Cafe';
+  src: local('Louis George Cafe'), url('./fonts/Louis George Cafe.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rounded_Elegance';
+  src: local('Rounded_Elegance'), url('./fonts/Rounded_Elegance.ttf') format('truetype');
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 .layout {
@@ -24,10 +36,10 @@ body {
 }
 
 :root {
-  --main-panel-color: rgba(27, 43, 73, 0.8);
-    --sub-panel-color: rgba(27, 43, 73, 0.9);
+  --main-panel-color: rgba(17,17,17,0.8);
+    --sub-panel-color: rgba(17,17,17,0.9);
     --white-full: #fafafa;
     --white-half: hsla(0,0%,98%,0.5);
-    --color-new-t: #B35E30;
-    --color-new-ct: #188BB6;
+    --color-new-t: #EE060F;
+    --color-new-ct: #1562fd;
 }

@@ -10,7 +10,7 @@ export default class Pause extends React.Component<IProps> {
         const { phase } = this.props;
         return (
             <div id={`pause`} className={phase && phase.phase === "paused" ? 'show' : ''}>
-                PAUZA
+                PAUSE
             </div>
         );
     }
