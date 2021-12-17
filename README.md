@@ -1,3 +1,4 @@
+<<<<<<< refs/remotes/upstream/master
 
 <p align="center">
 	<p align="center" style="font-weight:600; letter-spacing:1pt; font-size:20pt;">LEXOGRINE HUD</p>
@@ -141,3 +142,8 @@ This killfeed detects who killed whom, if there was an assist (flash assist as w
 
 ## Radar
 Radar is custom React-based component, made by Hubert Walczak, and is easily editable from css.
+=======
+# LHM-HUDs
+Prestige Build Status
+[![Prestige](https://github.com/kubo6472/LHM-HUDs/actions/workflows/workflow.yml/badge.svg?branch=prestige)](https://github.com/kubo6472/LHM-HUDs/actions/workflows/workflow.yml)
+>>>>>>> Create README.md
