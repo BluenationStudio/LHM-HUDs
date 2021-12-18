@@ -6,8 +6,22 @@ import ActionManager, { ConfigManager } from './api/actionManager';
 
 import { CSGO, PlayerExtension, GSISocket } from "csgogsi-socket";
 import { Match } from './api/interfaces';
+import { initiateConnection } from './HUD/Camera/mediaStream';
 
 export const { GSI, socket } = GSISocket(isDev ? `localhost:${port}` : '/', "update");
+
+type RoundPlayerDamage = {
+	steamid: string;
+	damage: number;
+};
+type RoundDamage = {
+	round: number;
+	players: RoundPlayerDamage[];
+};
+
+socket.on('update', (_csgo: any, damage?: RoundDamage[]) => {
+	if(damage) GSI.damage = damage;
+});
 
 export const actions = new ActionManager();
 export const configs = new ConfigManager();
@@ -95,9 +109,9 @@ class App extends React.Component<any, { match: Match | null, game: CSGO | null,
 
 		socket.on("readyToRegister", () => {
 			socket.emit("register", name, isDev);
+			initiateConnection();
 		});
 		socket.on(`hud_config`, (data: any) => {
-			console.log(data);
 			configs.save(data);
 		});
 		socket.on(`hud_action`, (data: any) => {
@@ -132,7 +146,7 @@ class App extends React.Component<any, { match: Match | null, game: CSGO | null,
 			dataLoader.match = new Promise((resolve) => {
 				api.match.getCurrent().then(match => {
 					if (!match) {
-						dataLoader.match = null;
+						//dataLoader.match = null;
 						return;
 					}
 					this.setState({ match });
@@ -168,13 +182,13 @@ class App extends React.Component<any, { match: Match | null, game: CSGO | null,
 
 
 				}).catch(() => {
-					dataLoader.match = null;
+					//dataLoader.match = null;
 				});
 			});
 		}
 	}
 	render() {
-		if (!this.state.game) return '';
+		if (!this.state.game) return null;
 		return (
 			<Layout game={this.state.game} match={this.state.match} />
 		);
