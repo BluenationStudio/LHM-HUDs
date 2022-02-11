@@ -179,6 +179,9 @@ html, body, .map-container {
 .map .bomb {
     transition:transform 0.1s ease;
 }
+.map .bomb {
+    transition:transform 0.1s ease;
+}
 .map .bomb .background {
     background-image: url('./grenades/bomb.png');
     background-size: 66%;
