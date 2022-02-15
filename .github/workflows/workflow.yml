@@ -1,9 +1,9 @@
-name: Classic
+name: build
 on:
   push:
     branches: [ classic ]
 jobs:
-  classic:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
