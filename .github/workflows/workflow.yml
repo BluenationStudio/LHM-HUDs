@@ -1,9 +1,9 @@
-name: Prestige
+name: Faceit
 on:
   push:
-    branches: [ prestige ]
+    branches: [ faceit ]
 jobs:
-  prestige:
+  faceit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
