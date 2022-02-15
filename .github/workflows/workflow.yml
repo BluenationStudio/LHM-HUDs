@@ -1,9 +1,9 @@
-name: Classic
+name: Observ
 on:
   push:
-    branches: [ classic ]
+    branches: [ observ ]
 jobs:
-  classic:
+  observ:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -11,5 +11,5 @@ jobs:
       - run: yarn && yarn sign
       - uses: actions/upload-artifact@v2.3.1
         with:
-          name: UC_Classic
+          name: UC_Observ
           path: build/
