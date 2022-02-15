@@ -1,9 +1,9 @@
-name: Faceit
+name: build
 on:
   push:
     branches: [ faceit ]
 jobs:
-  faceit:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
