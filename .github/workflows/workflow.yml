@@ -1,9 +1,9 @@
-name: Observ
+name: build
 on:
   push:
     branches: [ observ ]
 jobs:
-  observ:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
