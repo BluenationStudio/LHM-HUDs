@@ -64,11 +64,19 @@ html, body, .map-container {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    transition:transform 0.1s linear;
+    transition:transform 0.2s ease;
 }
 .map .player.dead {
     opacity: 0.2;
     z-index: 1;
+}
+.map .player {
+    transition:transform 0.1s ease;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
 }
 .map .player:not(.dead) {
     z-index: 2;
@@ -94,6 +102,9 @@ html, body, .map-container {
     background-color: rgba(255,255,255,0.5);
     opacity: 1;
     transition: opacity 1s;
+}
+.map .grenade.smoke {
+    transition: all 0.5s;
 }
 .map .grenade.smoke.inair .background {
     background-color: transparent;
@@ -162,7 +173,11 @@ html, body, .map-container {
     font-weight: 600;
     border-radius: 50%;
     -webkit-font-smoothing: subpixel-antialiased;
-    font-size: 45px;
+    font-size: 37px;
+    text-shadow: 4px 4px 0 black;
+}
+.map .bomb {
+    transition:transform 0.1s ease;
 }
 .map .bomb .background {
     background-image: url('./grenades/bomb.png');
@@ -181,10 +196,10 @@ html, body, .map-container {
     animation: BombDefused 2s 1 forwards;
 }
 .map .player.CT .label {
-    background: radial-gradient(rgb(61, 141, 224), rgb(42, 49, 119));
+    background: rgb(16, 88, 197)
 }
 .map .player.T .label {
-    background: radial-gradient(rgb(255, 129, 0), var(--color-new-t));
+    background: rgb(255, 153, 0);
 }
 .map .player.T.hasBomb .label {
     background: red;

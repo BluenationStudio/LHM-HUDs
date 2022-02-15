@@ -28,13 +28,13 @@
     .single_kill {
         display: flex;
         flex-direction: row;
-        background-color: rgba(0,0,0,0.64);
+        background-color: var(--main-panel-color);
         margin-bottom:5px;
         color:white;
         animation: KillLifeCycle 5s linear 1;
         animation-fill-mode: forwards;/**/
         height: 31px;
-        font-size: 14px;
+        font-size: 22px;
         overflow: hidden;
         align-items: center;
         font-weight:500;
