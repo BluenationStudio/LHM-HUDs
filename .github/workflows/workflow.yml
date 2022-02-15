@@ -1,9 +1,9 @@
-name: Prestige
+name: Tedi
 on:
   push:
-    branches: [ prestige ]
+    branches: [ tedi ]
 jobs:
-  prestige:
+  tedi:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
