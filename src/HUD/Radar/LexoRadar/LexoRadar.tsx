@@ -13,6 +13,8 @@ interface IProps {
   mapConfig: MapConfig,
   parsePosition: (position: number[], size: number, config: ScaleConfig) => number[]
 }
+
+const isShooting = (lastShoot: number) => (new Date()).getTime() - lastShoot <= 250;
 class App extends React.Component<IProps> {
   constructor(props: IProps) {
     super(props);
@@ -46,6 +48,7 @@ class App extends React.Component<IProps> {
           width: config.playerSize,
           height: config.playerSize,
         }}>
+        <div className="background-fire" style={{ transform: `rotate(${-90 + player.position[2]}deg)`, opacity: isShooting(player.lastShoot) ? 1 : 0 }} ><div className="bg"/></div>
         <div className="background" style={{ transform: `rotate(${45 + player.position[2]}deg)` }}></div>
         <div className="avatar"><Avatar steamid={player.steamid} height={config.playerSize} width={config.playerSize} showSkull={false}/></div>
       </div>
