@@ -25,10 +25,12 @@ export default class RadarMaps extends React.Component<Props, State> {
 	}
     render() {
         const { match } = this.props;
+        const { radarSize, showBig, showRadar } = this.state;
+        const size = showBig ? 600 : radarSize;
         return (
-            <div id={`radar_maps_container`} className={`${!this.state.showRadar ? 'hide':''}`}>
-                <Radar radarSize={this.state.radarSize} game={this.props.game}/>
-                {match ? <MapsBar match={this.props.match} map={this.props.map}  game={this.props.game}/>:null}
+            <div id={`radar_maps_container`} className={`${!showRadar ? 'hide' : ''} ${showBig ? 'preview':''}`}>
+                <div className="radar-component-container" style={{width: `${size}px`, height: `${size}px`}}><Radar radarSize={size} game={this.props.game} /></div>
+                {match ? <MapsBar match={this.props.match} map={this.props.map} game={this.props.game} /> : null}
             </div>
         );
     }
