@@ -1,6 +1,6 @@
 import React from 'react';
-import { isDev, port } from '../../api/api';
-import { actions } from '../../App';
+import CameraContainer from '../Camera/Container';
+import PlayerCamera from "./../Camera/Camera";
 
 import { avatars } from './../../api/avatars';
 
@@ -12,22 +12,14 @@ interface IProps {
   height?: number,
   width?: number,
   showSkull?: boolean,
-  showCam?: boolean
+  showCam?: boolean,
+  sidePlayer?: boolean
 }
-interface IState {
-  enableCams: boolean
-}
-export default class Avatar extends React.Component<IProps, IState> {
-  state = {
-    enableCams: !!this.props.showCam
-  }
-  componentDidMount(){
-    actions.on("toggleCams", () => {
-      this.setState({enableCams: !this.state.enableCams})
-  });
-  }
-  render(){
-    const { enableCams } = this.state;
+export default class Avatar extends React.Component<IProps> {
+
+  render() {
+    const { showCam, steamid, width, height, showSkull, sidePlayer } = this.props;
+    //const url = avatars.filter(avatar => avatar.steamid === this.props.steamid)[0];
     const avatarData = avatars[this.props.steamid];
     if(!avatarData || !avatarData.url){
         return '';
@@ -37,13 +29,13 @@ export default class Avatar extends React.Component<IProps, IState> {
     const topPosition = slot > 5 ? -150 : 0;
     return (
       <div className={`avatar`}>
-          {
-            this.props.showCam ? <div  id="cameraFeed" style={{ display: enableCams ? 'block' : 'none'}}><iframe style={{top: `${topPosition}px`, left: `${leftPosition}px`}} src={isDev ? `http://localhost:${port}/rmtp.html` : '/rmtp.html'} title="Camera feed" /></div> : null
-          }
-          {
-            this.props.showSkull ? <Skull height={this.props.height} width={this.props.width} /> : <img src={avatarData.url} height={this.props.height} width={this.props.width} alt={'Avatar'} />
-          }
-          
+        {
+          showCam ? ( sidePlayer ? <div className="videofeed"><PlayerCamera steamid={steamid} visible={true} /></div> : <CameraContainer observedSteamid={steamid} />) : null
+        }
+        {
+          showSkull ? <Skull height={height} width={width} /> : <img src={avatarData.url} height={height} width={width} alt={'Avatar'} />
+        }
+
       </div>
     );
   }
