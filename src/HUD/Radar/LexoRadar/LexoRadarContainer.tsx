@@ -129,7 +129,7 @@ class App extends React.Component<IProps> {
         const weapons = player.weapons ? Object.values(player.weapons) : [];
         const weapon = weapons.find(weapon => weapon.state === "active" && weapon.type !== "C4" && weapon.type !== "Knife" && weapon.type !== "Grenade");
 
-        const shooting: ShootingState = { ammo: weapon && weapon.ammo_clip || 0, weapon: weapon && weapon.name || '', lastShoot: 0 };
+        const shooting: ShootingState = { ammo: weapon && (weapon.ammo_clip || 0), weapon: weapon && (weapon.name || ''), lastShoot: 0 };
 
         const lastShoot = shootingState[player.steamid] || shooting;
 
@@ -292,11 +292,11 @@ class App extends React.Component<IProps> {
 
         const config = maps[this.props.mapName];
 
-        const zooms = config && config.zooms || [];
+        const zooms = config && (config.zooms || []);
 
         const activeZoom = zooms.find(zoom => zoom.threshold(players.map(pl => pl.player)));
 
-        const reverseZoom = 1/(activeZoom && activeZoom.zoom || 1);
+        const reverseZoom = 1/(activeZoom && (activeZoom.zoom || 1));
 
         // s*(1024-s)/2048
         if (!(this.props.mapName in maps)) {
