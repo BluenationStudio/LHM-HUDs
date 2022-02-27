@@ -1,7 +1,5 @@
 import React from 'react';
 import { Team } from 'csgogsi-socket';
-import TeamLogo from './TeamLogo';
-import ucLogo from '../../assets/ucClassic.png';
 
 
 export default class WinAnnouncement extends React.Component<{ team: Team | null, show: boolean }> {
