@@ -3744,18 +3744,18 @@ crypto-random-string@^1.0.0:
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
   integrity sha1-ojD2T1aDEOFJgAmUB5DsmVRbyn4=
 
-csgogsi-socket@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/csgogsi-socket/-/csgogsi-socket-2.5.1.tgz#c245c0a0d32919c89631a5ce8932c896b511131b"
-  integrity sha512-A/g7ZpQsO1gGbRam2J1Q1mR+/4FUucQDl8DMzVVx7w6DPkRV5GwhxQfR+VJDp5szgGc7+7/m9MH8prJI6DabIA==
+csgogsi-socket@^2.5.5:
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/csgogsi-socket/-/csgogsi-socket-2.5.7.tgz#e5e729d195ff1a412171c71628fa1dcad3796180"
+  integrity sha512-3gUg2I2RfudSOe67PfbifS+P4Ug1TC9abrBlddAsb0hZl+QpFq4eeiDfQEajMh2LxCg8b/0OoVH2/FU52mYAYg==
   dependencies:
-    csgogsi "^2.5.1"
+    csgogsi "^2.5.6"
     socket.io-client "^4.0.0"
 
-csgogsi@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/csgogsi/-/csgogsi-2.5.1.tgz#c7d4596d8a4ba9b5ea94d7d7c9c07548bc3963bc"
-  integrity sha512-wyhNHztZVom/q7OKOTW38hupbzVWhJpUYNJDQyhO6HLhGLozEKVdcyzY2EvO8Uu14UkwN79Bl8OP4GoTsWT3iA==
+csgogsi@^2.5.6:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/csgogsi/-/csgogsi-2.5.6.tgz#f25765038f26a785716a879009f12b5fab567f16"
+  integrity sha512-vgtsMDOca8161lvLMtWOvCzukvtQLsyr/TUmS1d4YHGkZ6G7qzPt3U6uURFYfP2p/IvegEn1Yh4S2OQD4xc7EQ==
 
 css-blank-pseudo@^0.1.4:
   version "0.1.4"

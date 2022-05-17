@@ -70,8 +70,8 @@ export default class Observed extends React.Component<{ player: Player | null, v
 					</div>
 					<div className="ammo">
 						<div className="ammo_counter">
-							<div className="ammo_clip">{(currentWeapon && currentWeapon.ammo_clip) || "0"}</div>
-							<div className="ammo_reserve">/{(currentWeapon && currentWeapon.ammo_reserve) || "0"}</div>
+							<div className="ammo_clip">{(currentWeapon && currentWeapon.ammo_clip) || ""}</div>
+							<div className="ammo_reserve">{"/" + (currentWeapon && currentWeapon.ammo_reserve) || ""}</div>
 						</div>
 					</div>
 				</div>
