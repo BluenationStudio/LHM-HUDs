@@ -1,7 +1,7 @@
 name: build
 on:
   push:
-    branches: [ observ ]
+    branches: [ eus ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,5 +11,5 @@ jobs:
       - run: yarn && yarn sign
       - uses: actions/upload-artifact@v2.3.1
         with:
-          name: UC_Observ
+          name: EUS
           path: build/
