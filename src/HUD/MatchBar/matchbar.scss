@@ -228,7 +228,7 @@
 	.winnerLogo {
 		position: absolute;
 		top: 0px;
-		left: -30px;
+		left: -40px;
 		img {
 			height: 160px;
 		}
@@ -236,7 +236,7 @@
 	.ucLogo {
 		position: absolute;
 		top: 0px;
-		right: -30px;
+		right: -40px;
 		img {
 			height: 160px;
 		}
@@ -262,21 +262,11 @@
 	}
   
 	&.T {
-	color: var(--color-new-t) !important;
-	  box-shadow: var(--color-new-t) 0px 0px 0 0;
-  
-	  &.show {
-		box-shadow: var(--color-light-t) 15px 15px 0 0;
-	  }
+		color: var(--color-new-t) !important;
 	}
   
 	&.CT {
 		color: var(--color-new-ct) !important; 
-	  box-shadow: var(--color-new-ct) 0px 0px 0 0;
-  
-	  &.show {
-		box-shadow: var(--color-light-ct) 15px 15px 0 0;
-	  }
 	}
   }
 

@@ -29,5 +29,6 @@ body {
     --white-full: #fafafa;
     --white-half: hsla(0,0%,98%,0.5);
     --color-new-t: #ce4e0e;
-    --color-new-ct: #91a8e9;
+    --color-new-ct: #638cff;
+    --color-new-bomb: #ec0a0a; /*used only in lexoradar*/
 }
