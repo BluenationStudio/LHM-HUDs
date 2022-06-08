@@ -1,6 +1,6 @@
 .map_series_container {
 	position: fixed;
-	top: 30px;
+	top: 100px;
 	right: 20px;
 	width: 347px;
 	display: flex;
@@ -29,6 +29,7 @@
 			color: black;
 			height: 100%;
 			display: flex;
+			font-family: Montserrat;
 			font-weight: 700;
 			align-items: center;
 			justify-content: center;
@@ -63,6 +64,7 @@
 				justify-content: center;
 				font-size: 9px;
 				font-weight: 700;
+				font-family: Montserrat;
 				text-transform: uppercase;
 			}
 		}
@@ -88,6 +90,7 @@
 		height: 25px;
 		color: white;
 		border-radius: 6px 6px 0 0;
+		font-family: Montserrat;
 		font-size: 13px;
 		font-weight: 600;
 		margin-bottom: 2px;
@@ -142,51 +145,9 @@
 #timeout.show, #pause.show {
 	opacity: 1;
 }
-.timeout.T {
+#timeout.t {
 	color: var(--color-new-t);
 }
-.timeout.CT {
+#timeout.ct {
 	color: var(--color-new-ct);
-}
-.map_series_container .veto_container.de_inferno.active {
-	background-image: url("../.././assets/veto/de_inferno.jpg");
-}
-.map_series_container .veto_container.de_dust2.active {
-	background-image: url("../.././assets/veto/de_dust2.jpg");
-}
-.map_series_container .veto_container.de_overpass.active {
-	background-image: url("../.././assets/veto/de_overpass.jpg");
-}
-.map_series_container .veto_container.de_nuke.active {
-	background-image: url("../.././assets/veto/de_nuke.jpg");
-}
-.map_series_container .veto_container.de_mirage.active {
-	background-image: url("../.././assets/veto/de_mirage.jpg");
-}
-.map_series_container .veto_container.de_vertigo.active {
-	background-image: url("../.././assets/veto/de_vertigo.jpg");
-}
-.map_series_container .veto_container.de_ancient.active {
-	background-image: url("../.././assets/veto/de_ancient.jpg");
-}
-.map_series_container .veto_container.de_inferno {
-	background-image: url("../.././assets/veto/de_inferno_gray.jpg");
-}
-.map_series_container .veto_container.de_dust2 {
-	background-image: url("../.././assets/veto/de_dust2_gray.jpg");
-}
-.map_series_container .veto_container.de_overpass {
-	background-image: url("../.././assets/veto/de_overpass_gray.jpg");
-}
-.map_series_container .veto_container.de_nuke {
-	background-image: url("../.././assets/veto/de_nuke_gray.jpg");
-}
-.map_series_container .veto_container.de_mirage {
-	background-image: url("../.././assets/veto/de_mirage_gray.jpg");
-}
-.map_series_container .veto_container.de_vertigo {
-	background-image: url("../.././assets/veto/de_vertigo_gray.jpg");
-}
-.map_series_container .veto_container.de_ancient {
-	background-image: url("../.././assets/veto/de_ancient_gray.jpg");
 }

@@ -20,9 +20,9 @@ interface IVetoProps {
 class VetoEntry extends React.Component<IVetoProps> {
     render(){
         const { veto, teams, active } = this.props;
-        return <div className={`veto_container ${active ? 'active' : ''} ${veto.mapName}`}>
+        return <div className={`veto_container ${active ? 'active' : ''}`}>
             <div className="veto_map_name">
-                {veto.mapName.replace("de_","")}
+                {veto.mapName}
             </div>
             <div className="veto_picker">
                 <TeamLogo team={teams.filter(team => team.id === veto.teamId)[0]} />

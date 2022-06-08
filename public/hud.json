@@ -1,7 +1,7 @@
 {
-    "name":"UniCup PRESTIGE HUD",
-    "version":"3.3.0",
-    "author":"jcop",
+    "name":"Lexogrine HUD",
+    "version":"2.4.0",
+    "author":"Lexogrine",
     "legacy": false,
     "radar": true,
     "killfeed": true,

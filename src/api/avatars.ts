@@ -1,5 +1,4 @@
 import api from './api';
-
 interface AvatarLoader {
     loader: Promise<string>,
     url: string,
