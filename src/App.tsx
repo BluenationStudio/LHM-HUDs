@@ -4,10 +4,21 @@ import api, { port, isDev } from './api/api';
 import { loadAvatarURL } from './api/avatars';
 import ActionManager, { ConfigManager } from './api/actionManager';
 
-import { CSGO, PlayerExtension, GSISocket } from "csgogsi-socket";
+import { CSGO, PlayerExtension, GSISocket, CSGORaw } from "csgogsi-socket";
 import { Match } from './api/interfaces';
 
+let isInWindow = !!window.parent.ipcApi;
+
 export const { GSI, socket } = GSISocket(isDev ? `localhost:${port}` : '/', "update");
+
+if(isInWindow){
+	window.parent.ipcApi.receive('raw', (data: CSGORaw, damage?: RoundDamage[]) => {
+		if(damage){
+			GSI.damage = damage;
+		}
+		GSI.digest(data);
+	});
+}
 
 type RoundPlayerDamage = {
 	steamid: string;
@@ -107,7 +118,8 @@ class App extends React.Component<any, { match: Match | null, game: CSGO | null,
 		}
 
 		socket.on("readyToRegister", () => {
-			socket.emit("register", name, isDev);
+			socket.emit("register", name, isDev, "csgo", isInWindow ? "IPC" : "DEFAULT");
+			initiateConnection();
 		});
 		socket.on(`hud_config`, (data: any) => {
 			configs.save(data);
@@ -120,7 +132,7 @@ class App extends React.Component<any, { match: Match | null, game: CSGO | null,
 		});
 
 		socket.on("refreshHUD", () => {
-			window.top.location.reload();
+			window.top?.location.reload();
 		});
 
 		socket.on("update_mirv", (data: any) => {
