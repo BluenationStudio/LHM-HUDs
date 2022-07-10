@@ -6,6 +6,7 @@ import ActionManager, { ConfigManager } from './api/actionManager';
 
 import { CSGO, PlayerExtension, GSISocket, CSGORaw } from "csgogsi-socket";
 import { Match } from './api/interfaces';
+import { initiateConnection } from './HUD/Camera/mediaStream';
 
 let isInWindow = !!window.parent.ipcApi;
 

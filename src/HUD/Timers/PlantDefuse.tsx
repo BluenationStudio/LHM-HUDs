@@ -1,10 +1,13 @@
 import React from "react";
+
 import { Timer } from "../MatchBar/MatchBar";
 import { Player } from "csgogsi";
 
 interface IProps {
   timer: Timer | null;
+  side: "right" | "left"
 }
+
 export default class Bomb extends React.Component<IProps> {
   getCaption = (type: "defusing" | "planting", player: Player | null) => {
     if(!player) return null;
