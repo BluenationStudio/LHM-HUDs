@@ -1,6 +1,6 @@
 {
-    "name":"UniCup PRESTIGE HUD",
-    "version":"3.3.0",
+    "name":"UniCup Huds",
+    "version":"3.8.0",
     "author":"jcop",
     "legacy": false,
     "radar": true,

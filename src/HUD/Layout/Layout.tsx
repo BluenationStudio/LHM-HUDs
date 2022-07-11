@@ -17,6 +17,7 @@ import Overview from "../Overview/Overview";
 import Tournament from "../Tournament/Tournament";
 import Pause from "../PauseTimeout/Pause";
 import Timeout from "../PauseTimeout/Timeout";
+import { ChangeColor } from "../../utils/ChangeColor";
 
 interface Props {
   game: CSGO,
@@ -54,6 +55,7 @@ export default class Layout extends React.Component<Props, State> {
         this.setState({ forceHide: true });
       }
     });
+    ChangeColor();
   }
 
   getVeto = () => {
@@ -77,6 +79,7 @@ export default class Layout extends React.Component<Props, State> {
     const { forceHide } = this.state;
 
     return (
+      <div id="theme">
       <div className="layout">
         <div className={`players_alive ${isFreezetime ? 'hide':''}`}>
           <div className="counter_container">
@@ -127,6 +130,7 @@ export default class Layout extends React.Component<Props, State> {
             show={isFreezetime && !forceHide}
           />
         </div>
+      </div>
       </div>
     );
   }

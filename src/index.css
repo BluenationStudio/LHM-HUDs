@@ -23,11 +23,28 @@ body {
   height: 100%;
 }
 
-:root {
+div#theme.ucp {
   --main-panel-color: rgba(27, 43, 73, 0.8);
     --sub-panel-color: rgba(27, 43, 73, 0.9);
     --white-full: #fafafa;
     --white-half: hsla(0,0%,98%,0.5);
     --color-new-t: #B35E30;
     --color-new-ct: #188BB6;
+}
+div#theme.ucc {
+  --main-panel-color: rgba(27, 43, 73, 0.8);
+    --sub-panel-color: rgba(27, 43, 73, 0.9);
+    --white-full: #fafafa;
+    --white-half: hsla(0,0%,98%,0.5);
+    --color-new-t: #c6b72e;
+    --color-new-ct: #1838b6;
+}
+div#theme.eus {
+  --main-panel-color: rgba(27, 43, 73, 0.8);
+    --sub-panel-color: rgba(27, 43, 73, 0.9);
+    --white-full: #fafafa;
+    --white-half: hsla(0,0%,98%,0.5);
+    --color-new-t: #ce4e0e;
+    --color-new-ct: #638cff;
+    --color-new-bomb: #ec0a0a; /*used only in lexoradar*/
 }

@@ -1,1 +1,28 @@
-[]
+[
+    {
+        "label": "HUD Variant",
+        "name":"color_scheme",
+        "inputs": [
+            {
+                "type": "select",
+                "name": "select_variant",
+                "label": "HUD Variant",
+                "values": [
+                    {
+                        "name": "ucp",
+                        "label": "UniCup Prestige"
+                    },
+                    {
+                        "name": "ucc",
+                        "label": "UniCup Classic"
+                    },
+                    {
+                        "name": "eus",
+                        "label": "Esport University Superfinals"
+                    }
+                ]
+            }
+
+        ]
+    }
+]
